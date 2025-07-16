@@ -1,0 +1,169 @@
+/* Basic reset for consistent styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
+    background-color: #282c34; /* Deeper, more professional dark background */
+    color: #abb2bf; /* Light grey text for good readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px; /* Add some padding for smaller screens */
+}
+
+.container {
+    background-color: #3a404a; /* Slightly lighter dark background for the container */
+    padding: 30px;
+    border-radius: 12px; /* Rounded corners for the container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger, more prominent shadow */
+    text-align: center;
+    width: 100%;
+    max-width: 450px; /* Max width for better readability on large screens */
+    border: 1px solid #4b525e; /* Subtle border */
+}
+
+h1 {
+    color: #61afef; /* A cool, vibrant blue accent for the main heading */
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px; /* Space between input and button */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+}
+
+#city-input {
+    flex-grow: 1; /* Allow input to take available space */
+    padding: 12px 15px;
+    border: 1px solid #4b525e;
+    border-radius: 8px; /* Rounded corners for input */
+    background-color: #2c313a; /* Darker background for input */
+    color: #abb2bf;
+    font-size: 1em;
+    outline: none; /* Remove outline on focus */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    max-width: 70%; /* Limit input width */
+}
+
+#city-input::placeholder {
+    color: #636b78;
+}
+
+#city-input:focus {
+    border-color: #61afef; /* Highlight border on focus */
+    box-shadow: 0 0 0 3px rgba(97, 175, 239, 0.3); /* Soft glow on focus */
+}
+
+#get-whether-btn {
+    padding: 12px 20px;
+    background-color: #98c379; /* A pleasant green accent for the button */
+    color: #282c34; /* Dark text on button for contrast */
+    border: none;
+    border-radius: 8px; /* Rounded corners for button */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#get-whether-btn:hover {
+    background-color: #82b368; /* Slightly darker on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+#get-whether-btn:active {
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#weather-info {
+    background-color: #2c313a; /* Darker background for weather info */
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3); /* Inner shadow for subtle depth */
+    transition: opacity 0.5s ease; /* Smooth transition for visibility */
+}
+
+#weather-info h2 {
+    color: #e5c07b; /* A warm yellow/orange for city name */
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#weather-info p {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+#weather-info p:last-child {
+    margin-bottom: 0;
+}
+
+#temperature {
+    font-weight: bold;
+    color: #c678dd; /* A soft purple for temperature */
+}
+
+#description {
+    font-style: italic;
+    color: #98c379; /* Green for description */
+}
+
+#error-message {
+    color: #e06c75; /* Red color for error messages */
+    margin-top: 20px;
+    font-weight: 500;
+    transition: opacity 0.5s ease; /* Smooth transition for visibility */
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .input-container {
+        flex-direction: column; /* Stack input and button vertically */
+        align-items: stretch;
+    }
+
+    #city-input {
+        max-width: 100%; /* Full width for input on small screens */
+    }
+
+    #get-whether-btn {
+        width: 100%; /* Full width for button on small screens */
+    }
+
+    #weather-info h2 {
+        font-size: 1.8em;
+    }
+
+    #weather-info p {
+        font-size: 1.1em;
+    }
+}
